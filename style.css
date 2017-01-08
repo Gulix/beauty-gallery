@@ -1,0 +1,107 @@
+h1 {
+    font-family: 'Josefin Slab';
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    font-size: 72px;
+    color: #690B58;
+}
+
+h2 {
+    font-family: 'Josefin Slab';
+    font-weight: bold;
+    text-align: center;
+    font-size: 48px;
+    color: #690B58;
+}
+
+h3 {
+    font-family: 'Josefin Slab';
+    font-weight: 800;
+    text-align: center;
+    font-size: 48px;
+    color: #690B58;
+    cursor: pointer;
+}
+
+h3:hover {
+  background-color: #f3d3fb;
+  color: #540846;
+}
+
+body {
+    background-color: #FBF3D3;
+}
+
+.classic {
+    text-align: center;
+    color: #690B58;
+    font-family: 'Josefin Slab';
+    font-size: 32px;
+}
+
+.back-home {
+    text-align: left;
+    margin-left: 50px;
+    color: #690B58;
+    font-family: 'Josefin Slab';
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.back-home:hover {
+  text-decoration: underline;
+}
+
+.link {
+    text-align: center;
+    color: #490B69;
+    font-family: 'Josefin Slab';
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #690B58;
+    font-family: 'Josefin Slab';
+    font-size: 24px;
+    font-style: italic;
+}
+
+.category-presentation {
+  display: inline-block;
+  border: solid 5px #690B58;
+  margin: 20px;
+  padding: 15px;
+  width: 50%;
+  cursor: pointer;
+  color: #690B58;
+}
+
+.category-presentation:hover {
+  background-color: #f3d3fb;
+  color: #540846;
+}
+
+.category-name {
+  font-family: 'Josefin Slab';
+  font-weight: bold;
+  text-align: center;
+  font-size: 48px;
+}
+
+.photo-cadre {
+  display: inline-block;
+  border: solid 5px #690B58;
+  margin: 20px;
+  padding: 15px;
+  width: 50%;
+  cursor: pointer;
+  color: #690B58;
+}
+
+.photo-cadre img {
+  width: 100%;
+}

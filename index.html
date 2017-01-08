@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Notre Mariage</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Florence &amp; Nicolas</h1>
+<h2>Notre Mariage</h2>
+
+<!-- ko if: isHome -->
+<p class="classic">Découvrez ici la galerie de photos de l'événement</p>
+<p class="classic">Nota Bene : Le chargement des photos peut être assez lent ...</p>
+
+<h3 data-bind="click: enterGallery">Entrez dans la galerie</h3>
+<!-- /ko -->
+
+<!-- ko if: isChooseCategory -->
+<p class="back-home" data-bind="click: backHome">Revenir à l'accueil</p>
+
+<!-- ko foreach: categories -->
+<div style="text-align: center">
+	<div class="category-presentation" data-bind="click: function() { $parent.chooseCategory($data); }">
+		<div class="category-name" data-bind="text: name"></div>
+
+	</div>
+</div>
+<!-- /ko -->
+
+<!-- /ko -->
+
+<!-- ko if: isDisplayCategory -->
+<p class="back-home" data-bind="click: backHome">Revenir à l'accueil</p>
+
+<!-- ko with: displayedCategory -->
+<h3 data-bind="click: function() { $parent.enterGallery(); }, text: name"></h3>
+
+<!-- ko foreach: photos -->
+<div style="text-align: center">
+	<div class="photo-cadre">
+		<a data-bind="attr: { href: fullSrc }" target="_blank"><img data-bind="attr: { src: fullSrc }"></img></a>
+	</div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+
+<!-- /ko -->
+
+<p class="footer">Merci de ne pas diffuser ces photos sur vos réseaux sociaux</p>
+<p class="footer">Contactez-nous <a href="mailto:nicolas.ronvel@yahoo.fr">par mail</a> si vous souhaitez ajouter vos photos à la galerie.</p>
+
+<script src="js/vendor/require.min.js" data-main="js/main.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89935860-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
