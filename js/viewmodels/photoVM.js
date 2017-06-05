@@ -1,11 +1,13 @@
 define(['knockout',
         'tinycolor',
         'lodash',
-        'json/load-photos'],
+        'json/load-photos',
+        'viewmodels/authorVM'],
 function(ko,
          TinyColor,
          _,
-         Photos) {
+         Photos,
+         AuthorVM) {
 
 function photoVM(file, category, author)
 {
@@ -13,7 +15,8 @@ function photoVM(file, category, author)
 
   self.file = ko.observable(file);
   self.category = category;
-  self.author = author;
+  self.authorKey = author;
+  self.authorVM = ko.observable(null);
 
   /*************************/
   /* Variables Declaration */
@@ -30,12 +33,16 @@ function photoVM(file, category, author)
   /*************/
   /* Functions */
   /*************/
-
+  self.getAuthor = function() {
+    var authors = AuthorVM.loadAll();
+    self.authorVM(_.find(authors, function(a) { return a.authorKey == self.authorKey; }));
+    //console.log("getAuthor : " + self.authorVM().infosAuthor())
+  }
 
   /*************************/
   /* Object Initialization */
   /*************************/
-
+  self.getAuthor();
 }
 
 return {
